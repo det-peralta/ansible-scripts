@@ -1,0 +1,6 @@
+---
+- name: Deploy SSH User
+  hosts: all
+  become: yes
+  roles:
+    - base
