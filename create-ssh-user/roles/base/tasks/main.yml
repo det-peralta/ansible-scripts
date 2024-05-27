@@ -1,0 +1,24 @@
+- name: "Create user {{ username }}"
+  user:
+    name: "{{ username }}"
+    groups: root
+    shell: /bin/bash
+
+- name: "Add ssh key for {{ username }}"
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ ssh_public_key }}"
+
+- name: "Add sudoers file for {{ username }}"
+  copy:
+    dest: "/etc/sudoers.d/{{ username }}"
+    content: "{{ username }} ALL=(ALL) NOPASSWD:ALL"
+    owner: root
+    group: root
+    mode: '0440'
+  notify: restart_sshd
+
+- name: "Install updates"
+  apt:
+    upgrade: dist
+    update_cache: true

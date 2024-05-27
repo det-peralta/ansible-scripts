@@ -1,5 +1,0 @@
----
-username: sleepy
-ssh_public_key: "< add key here >"
-ssh_users: "root sleepy"
-ssh_template_file: sshd_config_debian.j2

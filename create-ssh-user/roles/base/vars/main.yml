@@ -1,0 +1,2 @@
+username: ansible
+ssh_public_key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJVTr+Qq2Uza+WjtD1TM8LOCw1UiaWe3VLcpwsys6mhR ansible"
